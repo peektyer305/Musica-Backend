@@ -8,7 +8,7 @@ const port = 3001;
 //CORS
 const corsOptions = {
     origin:"http://localhost:5173",
-    optionSuccessStatus:200,
+    optionsSuccessStatus:204,
 };
 app.use(cors(corsOptions));
 //不正・悪意のあるURLをはじくためにフィルタリング？正規表現で実装しておきたい．
