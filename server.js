@@ -1,9 +1,16 @@
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
+const cors = require("cors");
 
 const app = express();
 const port = 3001;
+//CORS
+const corsOptions = {
+    origin:"http://localhost:5173",
+    optionSuccessStatus:200,
+};
+app.use(cors(corsOptions));
 //不正・悪意のあるURLをはじくためにフィルタリング？正規表現で実装しておきたい．
 app.get("/api/metadata",async(req,res) =>{
     const {url} = req.query;
